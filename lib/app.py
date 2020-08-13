@@ -4,7 +4,7 @@ from model import *
 def app():
     print("Welcome to your contact book!")
     user_action = input(
-        "Enter 1 to display all contacts\nEnter 2 to find a contact\nEnter 3 to create new contact\nEnter 4 to delete a contact\nEnter 5 to leave contact book\nYour option:")
+        "Enter 1 to display all contacts\nEnter 2 to find a contact\nEnter 3 to create new contact\nEnter 4 to update a contact\nEnter 5 to delete a contact\nEnter 6 to leave contact book\nYour option: ")
     if user_action == '1':
         display_all()
     elif user_action == '2':
@@ -12,8 +12,10 @@ def app():
     elif user_action == '3':
         create()
     elif user_action == '4':
-        delete()
+        update()
     elif user_action == '5':
+        delete()
+    elif user_action == '6':
         leave()
     else:
         print("please select from the options given")
@@ -52,7 +54,6 @@ def create():
     new_phone_number = input("Enter contact's phone number: ")
     new_email = input("Enter contact's email address: ")
     new_birthday = input("Enter contacts birthday(year-month-day): ")
-    print("Created contact")
 
     new_contact = Contact(
         full_name=new_full_name,
@@ -61,7 +62,7 @@ def create():
         birthday=new_birthday
     )
     new_contact.save()
-
+    print("Created contact")
 
     return_menu = input("Return to option menu (y/n) ")
     if return_menu == "y":
@@ -90,19 +91,50 @@ def delete():
         app()
     else:
         leave()
+
+
+def update():
+    find_one = input("Please Enter the contact's full name: ")
+    show_one = Contact.select().where(Contact.full_name == find_one)
+    show_one = list(show_one)
+    for i in show_one:
+        print(
+            f"Id: {i.id}, Name: {i.full_name}, Phone {i.phone_number}, Email: {i.email}, Birthday: {i.birthday}")
+    check_sure = input(
+        "If you're sure you want to update this contact, enter contact Id or enter n: ")
+    if check_sure == 'n':
+        app()
+    else:
+        found_contact = Contact.get(Contact.id == check_sure)
+        new_full_name = input("Update contact's full name to: ")
+        new_phone_number = input("Update contact's phone number to: ")
+        new_email = input("Update contact's email address to: ")
+        new_birthday = input("Update contact's birthday(year-month-day) to: ")
+        found_contact.full_name = new_full_name
+        found_contact.phone_number = new_phone_number
+        found_contact.email = new_email
+        found_contact.birthday = new_birthday
+        found_contact.save()
+        print("Updated contact")
+    return_menu = input("Return to option menu (y/n): ")
+    if return_menu == "y":
+        app()
+    else:
+        leave()
+
     #  contact_name = input(
     #      "Please enter the full name of the contact you want to delete(case sensitive): ")
     #  contact_to_delete = Contact.select().where(
     #      Contact.full_name == contact_name)
     #  contact_to_delete = list(contact_to_delete)
         # print(contact_to_delete)
-  #   for i in contact_to_delete:
-  #       print(
-  #           f"Id: {i.id}, Name: {i.full_name}, Phone {i.phone_number}, Email: {i.email}, Birthday: {i.birthday}")
-  #       check_sure = input(
-  #           "If you're sure you want to delete this contact, enter contact Id or enter n: ")
-  #       found_contact = Contact.get(Contact.id == check_sure)
-  #       found_contact.delete_instance()
+ #   for i in contact_to_delete:
+ #       print(
+ #           f"Id: {i.id}, Name: {i.full_name}, Phone {i.phone_number}, Email: {i.email}, Birthday: {i.birthday}")
+ #       check_sure = input(
+ #           "If you're sure you want to delete this contact, enter contact Id or enter n: ")
+ #       found_contact = Contact.get(Contact.id == check_sure)
+ #       found_contact.delete_instance()
 
 
 def leave():

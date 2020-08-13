@@ -18,7 +18,7 @@ def app():
     elif user_action == '6':
         leave()
     else:
-        print("please select from the options given")
+        print("Please select from the options given...")
         app()
 
 
@@ -42,7 +42,7 @@ def find():
     for i in show_one:
         print(
             f"{show_one.index(i) + 1}. Name: {i.full_name}, Phone {i.phone_number}, Email: {i.email}, Birthday: {i.birthday}")
-    return_menu = input("Return to option menu (y/n) ")
+    return_menu = input("Return to option menu (y/n): ")
     if return_menu == "y":
         app()
     else:
@@ -64,7 +64,7 @@ def create():
     new_contact.save()
     print("Created contact")
 
-    return_menu = input("Return to option menu (y/n) ")
+    return_menu = input("Return to option menu (y/n): ")
     if return_menu == "y":
         app()
     else:
@@ -121,20 +121,6 @@ def update():
         app()
     else:
         leave()
-
-    #  contact_name = input(
-    #      "Please enter the full name of the contact you want to delete(case sensitive): ")
-    #  contact_to_delete = Contact.select().where(
-    #      Contact.full_name == contact_name)
-    #  contact_to_delete = list(contact_to_delete)
-        # print(contact_to_delete)
- #   for i in contact_to_delete:
- #       print(
- #           f"Id: {i.id}, Name: {i.full_name}, Phone {i.phone_number}, Email: {i.email}, Birthday: {i.birthday}")
- #       check_sure = input(
- #           "If you're sure you want to delete this contact, enter contact Id or enter n: ")
- #       found_contact = Contact.get(Contact.id == check_sure)
- #       found_contact.delete_instance()
 
 
 def leave():

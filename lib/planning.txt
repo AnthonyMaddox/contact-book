@@ -36,6 +36,8 @@ import model to seed.py and app.py (don't import seed to app!)
 
 work on update function!
 
+figure out how to make a 
+
 
 
 

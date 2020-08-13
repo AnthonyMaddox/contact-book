@@ -1,0 +1,34 @@
+Run without errors
+Built in Python, use a SQL database with PeeWee models
+Must have a working seed script for the database (creating database and tables), this can be done either using PeeWee or a .sql file
+Include a README written in well formatted Markdown (hint: look up a README template)
+Shows a good commit history with frequent commits. We're looking for lots of small commits
+
+Contact Book
+
+Users should be able to create new contacts. They should be able to see a list of contacts in their contact book. They should be able to find a contact by the contact's first name.
+
+model has 
+full_name
+phone_number
+email
+
+create contacts db settings.sql file
+make models and seed data seed.py file
+
+seed data create contacts and save them
+drop database and then create
+
+def function contact_book
+
+input that asks what user would like to do
+
+
+
+
+
+
+
+
+
+

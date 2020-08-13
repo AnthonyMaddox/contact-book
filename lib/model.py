@@ -22,8 +22,6 @@ class Contact(BaseModel):
 #db.drop_tables([Contact])
 db.create_tables([Contact])
 
-# create
-
 
 # reading
 # grabbing_anthony = Contact.get(Contact.full_name == 'Anthony Maddox')

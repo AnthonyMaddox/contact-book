@@ -61,6 +61,8 @@ def create():
         birthday=new_birthday
     )
     new_contact.save()
+
+
     return_menu = input("Return to option menu (y/n) ")
     if return_menu == "y":
         app()
@@ -101,12 +103,6 @@ def delete():
   #           "If you're sure you want to delete this contact, enter contact Id or enter n: ")
   #       found_contact = Contact.get(Contact.id == check_sure)
   #       found_contact.delete_instance()
-
-    #  else:
-    #      print("Contact does not exist.")
-    #      app()
-
-        #
 
 
 def leave():

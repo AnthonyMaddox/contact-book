@@ -34,7 +34,7 @@ need model.py seed.py and app.py to avoid reseeding everytime app is run
 
 import model to seed.py and app.py (don't import seed to app!)
 
-
+work on update function!
 
 
 

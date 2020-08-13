@@ -23,6 +23,17 @@ def function contact_book
 
 input that asks what user would like to do
 
+functions for 
+   show all contacts
+   find one contact
+   create contact
+   delete contact
+   leave contact book
+
+need model.py seed.py and app.py to avoid reseeding everytime app is run
+
+import model to seed.py and app.py (don't import seed to app!)
+
 
 
 

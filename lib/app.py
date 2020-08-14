@@ -27,7 +27,7 @@ def display_all():
     show_all = list(show_all)
     for i in show_all:
         print(
-            f"{show_all.index(i) + 1}. Name: {i.full_name}, Phone: {i.phone_number}, Email: {i.email} Birthday: {i.birthday}")
+            f"{show_all.index(i) + 1}. Name: {i.first_name} {i.last_name} Phone: {i.phone_number}, Email: {i.email} Birthday: {i.birthday}")
     return_menu = input("Return to option menu (y/n): ")
     if return_menu == "y":
         app()
@@ -36,12 +36,12 @@ def display_all():
 
 
 def find():
-    find_one = input("Please Enter the contact's full name: ")
-    show_one = Contact.select().where(Contact.full_name == find_one)
+    find_one = input("Please Enter the contact's first name: ")
+    show_one = Contact.select().where(Contact.first_name == find_one)
     show_one = list(show_one)
     for i in show_one:
         print(
-            f"{show_one.index(i) + 1}. Name: {i.full_name}, Phone {i.phone_number}, Email: {i.email}, Birthday: {i.birthday}")
+            f"{show_one.index(i) + 1}. Name: {i.first_name} {i.last_name} Phone {i.phone_number}, Email: {i.email}, Birthday: {i.birthday}")
     return_menu = input("Return to option menu (y/n): ")
     if return_menu == "y":
         app()
@@ -50,13 +50,15 @@ def find():
 
 
 def create():
-    new_full_name = input("Enter contact's full name: ")
+    new_first_name = input("Enter contact's first name: ")
+    new_last_name = input("Enter contact's last name: ")
     new_phone_number = input("Enter contact's phone number: ")
     new_email = input("Enter contact's email address: ")
     new_birthday = input("Enter contacts birthday(year-month-day): ")
 
     new_contact = Contact(
-        full_name=new_full_name,
+        first_name=new_first_name,
+        last_name=new_last_name,
         phone_number=new_phone_number,
         email=new_email,
         birthday=new_birthday
@@ -72,12 +74,12 @@ def create():
 
 
 def delete():
-    find_one = input("Please Enter the contact's full name: ")
-    show_one = Contact.select().where(Contact.full_name == find_one)
+    find_one = input("Please Enter the contact's first name: ")
+    show_one = Contact.select().where(Contact.first_name == find_one)
     show_one = list(show_one)
     for i in show_one:
         print(
-            f"Id: {i.id}, Name: {i.full_name}, Phone {i.phone_number}, Email: {i.email}, Birthday: {i.birthday}")
+            f"Id: {i.id}, Name: {i.first_name} {i.last_name}, Phone {i.phone_number}, Email: {i.email}, Birthday: {i.birthday}")
     check_sure = input(
         "If you're sure you want to delete this contact, enter contact Id or enter n: ")
     if check_sure == 'n':
@@ -94,23 +96,25 @@ def delete():
 
 
 def update():
-    find_one = input("Please Enter the contact's full name: ")
-    show_one = Contact.select().where(Contact.full_name == find_one)
+    find_one = input("Please Enter the contact's first name: ")
+    show_one = Contact.select().where(Contact.first_name == find_one)
     show_one = list(show_one)
     for i in show_one:
         print(
-            f"Id: {i.id}, Name: {i.full_name}, Phone {i.phone_number}, Email: {i.email}, Birthday: {i.birthday}")
+            f"Id: {i.id}, Name: {i.first_name} {i.last_name}, Phone {i.phone_number}, Email: {i.email}, Birthday: {i.birthday}")
     check_sure = input(
         "If you're sure you want to update this contact, enter contact Id or enter n: ")
     if check_sure == 'n':
         app()
     else:
         found_contact = Contact.get(Contact.id == check_sure)
-        new_full_name = input("Update contact's full name to: ")
+        new_first_name = input("Update contact's first name to: ")
+        new_last_name = input("Update contact's last name to: ")
         new_phone_number = input("Update contact's phone number to: ")
         new_email = input("Update contact's email address to: ")
         new_birthday = input("Update contact's birthday(year-month-day) to: ")
-        found_contact.full_name = new_full_name
+        found_contact.first_name = new_first_name
+        found_contact.last_name = new_last_name
         found_contact.phone_number = new_phone_number
         found_contact.email = new_email
         found_contact.birthday = new_birthday

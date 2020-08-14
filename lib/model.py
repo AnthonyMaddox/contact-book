@@ -13,7 +13,8 @@ class BaseModel(Model):
 
 
 class Contact(BaseModel):
-    full_name = CharField()
+    first_name = CharField()
+    last_name = CharField()
     phone_number = CharField()
     email = CharField()
     birthday = DateField()
@@ -24,6 +25,6 @@ db.create_tables([Contact])
 
 
 # reading
-# grabbing_anthony = Contact.get(Contact.full_name == 'Anthony Maddox')
+# grabbing_anthony = Contact.get(Contact.first_name == 'Anthony')
 
 # print(grabbing_anthony.full_name)

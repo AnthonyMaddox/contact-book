@@ -10,45 +10,45 @@
 
 ## Instructions:
 
-###### * Make sure you have Python 3, postgreSQL and pipenv installed on your computer
+* ###### Make sure you have Python 3, postgreSQL and pipenv installed on your computer
 
-###### * Open two command line interfaces and in one of them run:
+* ###### Open two command line interfaces and in one of them run:
 
 ```
 psql
 ```
 
-###### In your psql command line run:
+* ###### In your psql command line run:
 
 ```
 CREATE DATABASE 'contacts';
 ```
 
-###### Clone down this repo
+* ###### Clone down this repo
 
-###### In your other CLI, CD into the cloned repo's directory
+* ###### In your other CLI, CD into the cloned repo's directory
 
-###### CD into the lib directory
+* ###### CD into the lib directory
 
-###### To install dependencies run:
+* ###### To install dependencies run:
 
 ```
 pipenv install
 ```
 
-###### To enter your virtual environment run:
+* ###### To enter your virtual environment run:
 
 ```
 pipenv shell
 ```
 
-###### To seed initial data to contacts database, in your virtual environment run:
+* ###### To seed initial data to contacts database, in your virtual environment run:
 
 ```
 python3 seed.py
 ```
 
-###### To start the app run:
+* ###### To start the app run:
 
 ```
 python3 app.py
@@ -56,7 +56,7 @@ python3 app.py
 
 ### Option Menu:
 
-###### Upon running python3 app.py you will be given an option menu that appears like this:
+> ###### Upon running python3 app.py you will be given an option menu that appears like this:
 
 ```
 Welcome to your contact book!
@@ -68,9 +68,9 @@ Enter 5 to delete a contact
 Enter 6 to leave contact book
 ```
 
-###### Enter a number option to begin using the your contact book
+* ###### Enter a number option to begin using the your contact book
 
-###### You may delete initial contacts
+* ###### You may delete initial contacts
 
 ### CRUD
 

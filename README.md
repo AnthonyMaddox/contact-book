@@ -74,13 +74,13 @@ Enter 6 to leave contact book
 
 ### CRUD
 
-###### Create a contact by entering their full name, phone number, email and birthday
+###### **Create** a contact by entering their full name, phone number, email and birthday
 
-###### Read by finding and displaying either all or one contact by name
+###### **Read** by finding and displaying either all or one contact by name
 
-###### Update a contact by using the contact's Id and reentering all of the information for that contact
+###### **Update** a contact by using the contact's Id and reentering all of the information for that contact
 
-###### Delete a contact by using contact's Id
+###### **Delete** a contact by using contact's Id
 
 ### Author:
 

@@ -4,15 +4,15 @@
 
 ###### This application is a representation of a contact book that runs in the command line interface. It has full CRUD operations allowing the user to display all contacts, find one contact, create a new contact and delete a contact.
 
-### Technologies:
+## Technologies:
 
 #### Peewee, PostgreSQL, Python
 
-### Instructions:
+## Instructions:
 
-###### Make sure you have Python 3, postgreSQL and pipenv installed on your computer
+###### * Make sure you have Python 3, postgreSQL and pipenv installed on your computer
 
-###### Open two command line interfaces and in one of them run:
+###### * Open two command line interfaces and in one of them run:
 
 ```
 psql

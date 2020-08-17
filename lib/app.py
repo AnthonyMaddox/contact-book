@@ -4,7 +4,7 @@ from model import *
 def app():
     print("Welcome to your contact book!")
     user_action = input(
-        "Enter 1 to display all contacts\nEnter 2 to find a contact\nEnter 3 to create new contact\nEnter 4 to update a contact\nEnter 5 to delete a contact\nEnter 6 to leave contact book\nYour option: ")
+        "Enter 1 to display all contacts\nEnter 2 to find a contact by first name\nEnter 3 to create new contact\nEnter 4 to update a contact\nEnter 5 to delete a contact\nEnter 6 to leave contact book\nYour option: ")
     if user_action == '1':
         display_all()
     elif user_action == '2':

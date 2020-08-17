@@ -61,7 +61,7 @@ python3 app.py
 ```
 Welcome to your contact book!
 Enter 1 to display all contacts
-Enter 2 to find a contact
+Enter 2 to find a contact by first name
 Enter 3 to create new contact
 Enter 4 to update a contact
 Enter 5 to delete a contact
@@ -76,7 +76,7 @@ Enter 6 to leave contact book
 
 ###### _CREATE_ a contact by entering their full name, phone number, email and birthday
 
-###### _READ_ by finding and displaying either all or one contact by name
+###### _READ_ by finding and displaying either all or one contact by first name
 
 ###### _UPDATE_ a contact by using the contact's Id and reentering all of the information for that contact
 

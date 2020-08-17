@@ -21,7 +21,7 @@ psql
 - ###### In your psql command line run:
 
 ```
-CREATE DATABASE 'contacts';
+CREATE DATABASE contacts;
 ```
 
 - ###### Clone down this repo
